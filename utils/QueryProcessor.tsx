@@ -11,5 +11,18 @@ export default function QueryProcessor(query: string): string {
     return "Victor Wang";
   }
 
+  if (query.includes("What is ")) {
+    const arr = query.split(" ");
+    console.log(arr);
+    var num1 = arr[2]
+    var num2 = arr[4]
+    var res = 0
+    if (!isNaN(parseInt(num1))  && !isNaN(parseInt(num2))){
+      res = parseInt(num1) + parseInt(num2);
+      console.log(res);
+    }
+    return res.toString();
+  }
+
   return "";
 }
