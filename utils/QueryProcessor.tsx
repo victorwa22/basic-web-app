@@ -7,5 +7,9 @@ export default function QueryProcessor(query: string): string {
     );
   }
 
-  return "Victor Wang";
+  if (query.toLowerCase().includes("What is your name?")) {
+    return "Victor Wang";
+  }
+
+  return "";
 }
