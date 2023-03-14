@@ -24,5 +24,23 @@ export default function QueryProcessor(query: string): string {
     return res.toString();
   }
 
+  if (query.includes("Which of the following numbers is the largest")) {
+    const arr = query.split(" ");
+    console.log(arr);
+
+    var num1_string = arr[8]
+    var num2_string = (arr[9])
+    var num3_string = (arr[10])
+
+    var num1 = (num1_string.slice(0,num1_string.length -1));
+    var num2 = (num2_string.slice(0,num1_string.length - 1));
+    var num3 = (num3_string.slice(0,num1_string.length - 1));
+
+    console.log(num1, num2, num3)
+    var res = Math.max(parseInt(num1), parseInt(num2), parseInt(num3))
+    return res.toString()
+  }
+
+
   return "";
 }
