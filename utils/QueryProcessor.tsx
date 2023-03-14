@@ -15,13 +15,29 @@ export default function QueryProcessor(query: string): string {
     const arr = query.split(" ");
     console.log(arr);
     var num1 = arr[2]
-    var num2 = arr[4]
+    var num2_string = (arr[4])
+    var num2 = (num2_string.slice(0,num2_string.length -1));
     var res = 0
-    if (!isNaN(parseInt(num1))  && !isNaN(parseInt(num2))){
+    var symbol = arr[3]
+
+    // if (!isNaN(parseInt(num1)) && !isNaN(parseInt(num2))){
+    console.log(symbol)
+    if (symbol === 'plus'){
       res = parseInt(num1) + parseInt(num2);
-      console.log(res);
     }
+    else if (symbol === 'minus'){
+      res = parseInt(num1) - parseInt(num2);
+    }
+    else if (symbol === 'multiplied'){
+      res = parseInt(num1) * parseInt(num2);
+    }
+    else if (symbol === 'to'){
+      res = Math.pow(parseInt(num1), parseInt(arr[7]))
+    }
+    console.log(res);
+    // }
     return res.toString();
+    
   }
 
   if (query.includes("Which of the following numbers is the largest")) {
